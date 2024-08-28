@@ -10,7 +10,8 @@ HealthOnFailure=kill
 
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=%h/containers/storage/radarr:/config
-Volume=/data:/data
+Volume=/data/media:/data/media
+Volume=/data/usenet:/data/usenet
 GroupAdd=keep-groups
 
 [Service]
