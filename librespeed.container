@@ -1,0 +1,16 @@
+[Container]
+ContainerName=librespeed
+Image=lscr.io/linuxserver/librespeed:latest
+AutoUpdate=registry
+Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin PASSWORD=ashuidas
+
+PublishPort=8082:80
+HealthCmd=curl http://localhost:80
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/librespeed:/config
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

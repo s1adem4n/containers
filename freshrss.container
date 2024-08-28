@@ -1,0 +1,18 @@
+[Container]
+ContainerName=freshrss
+Image=lscr.io/linuxserver/freshrss:latest
+AutoUpdate=registry
+Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
+
+PublishPort=8081:80
+Label=proxy-manager.enable=true
+
+HealthCmd=curl http://localhost:80
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/freshrss:/config
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

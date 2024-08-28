@@ -1,0 +1,17 @@
+[Container]
+Pod=media.pod
+ContainerName=sonarr
+Image=ghcr.io/hotio/sonarr:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+HealthCmd=curl http://localhost:8989
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/sonarr:/config
+Volume=/data:/data
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

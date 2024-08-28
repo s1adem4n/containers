@@ -1,0 +1,15 @@
+[Container]
+Pod=media.pod
+ContainerName=prowlarr
+Image=ghcr.io/hotio/prowlarr:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+HealthCmd=curl http://localhost:9696
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/prowlarr:/config
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

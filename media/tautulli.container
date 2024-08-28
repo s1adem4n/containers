@@ -1,0 +1,16 @@
+[Container]
+Pod=media.pod
+ContainerName=tautulli
+Image=ghcr.io/hotio/tautulli:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+HealthCmd=curl http://localhost:8181
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/tautulli:/config
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

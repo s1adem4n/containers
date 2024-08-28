@@ -1,0 +1,19 @@
+[Container]
+ContainerName=ntfy
+Image=docker.io/binwiederhier/ntfy:latest
+Exec=serve
+AutoUpdate=registry
+Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
+
+PublishPort=8085:80
+HealthStartPeriod=40s
+HealthCmd=wget -q http://localhost:80
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/ntfy:/etc/ntfy
+Volume=%h/containers/storage/ntfy/cache:/var/cache/ntfy
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

@@ -1,0 +1,24 @@
+[Container]
+Pod=media.pod
+ContainerName=plex
+Image=ghcr.io/hotio/plex:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+HealthCmd=curl http://localhost:32400
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/plex:/config
+Volume=/data/media:/data/media
+GroupAdd=keep-groups
+
+# Ramdisk / hardware acceleration
+#Tmpfs=/transcode
+#AddDevice=/dev/dri
+
+# Setup with claim token (required for first run)
+#Environment=PLEX_CLAIM=claim-token
+
+[Service]
+Restart=always

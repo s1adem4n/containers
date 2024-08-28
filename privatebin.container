@@ -1,0 +1,18 @@
+[Container]
+ContainerName=privatebin
+Image=docker.io/privatebin/unit-fs:latest
+AutoUpdate=registry
+Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
+
+PublishPort=8084:8080
+Label=proxy-manager.enable=true
+
+HealthCmd=curl http://localhost:8080
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/privatebin:/srv/data
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

@@ -1,0 +1,17 @@
+[Pod]
+# Bazarr
+PublishPort=6767:6767
+# Overseerr
+PublishPort=5055:5055
+# Plex
+PublishPort=32400:32400
+# Prowlarr
+PublishPort=9696:9696
+# Radarr
+PublishPort=7878:7878
+# SABnzbd
+PublishPort=8080:8080
+# Sonarr
+PublishPort=8989:8989
+# Tautulli
+PublishPort=8181:8181

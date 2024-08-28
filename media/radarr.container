@@ -1,0 +1,18 @@
+[Container]
+Pod=media.pod
+ContainerName=radarr
+Image=ghcr.io/hotio/radarr:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+HealthCmd=curl http://localhost:7878
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/radarr:/config
+Volume=/data:/data
+GroupAdd=keep-groups
+
+[Service]
+Restart=always
+

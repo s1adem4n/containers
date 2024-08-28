@@ -1,0 +1,17 @@
+[Container]
+Pod=media.pod
+ContainerName=sabnzbd
+Image=ghcr.io/hotio/sabnzbd:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+HealthCmd=curl http://localhost:8080
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/sabnzbd:/config
+Volume=/data/usenet:/data/usenet
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

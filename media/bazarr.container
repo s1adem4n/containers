@@ -1,0 +1,17 @@
+[Container]
+Pod=media.pod
+ContainerName=bazarr
+Image=ghcr.io/hotio/bazarr:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+HealthCmd=curl http://localhost:6767
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/bazarr:/config
+Volume=/data/media:/data/media
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

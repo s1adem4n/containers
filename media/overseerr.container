@@ -1,0 +1,17 @@
+[Container]
+Pod=media.pod
+ContainerName=overseerr
+Image=ghcr.io/hotio/overseerr:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+HealthCmd=curl http://localhost:5055
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/overseerr:/config
+Volume=/data/media:/data/media
+GroupAdd=keep-groups
+
+[Service]
+Restart=always

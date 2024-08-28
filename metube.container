@@ -1,0 +1,16 @@
+[Container]
+ContainerName=metube
+Image=ghcr.io/alexta69/metube:latest
+AutoUpdate=registry
+Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
+
+PublishPort=8083:8081
+HealthCmd=curl http://localhost:8081
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/metube:/downloads
+GroupAdd=keep-groups
+
+[Service]
+Restart=always
