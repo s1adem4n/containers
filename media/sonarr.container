@@ -3,7 +3,7 @@ Pod=media.pod
 ContainerName=sonarr
 Image=ghcr.io/hotio/sonarr:latest
 AutoUpdate=registry
-Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
 
 HealthStartPeriod=40s
 HealthCmd=curl http://localhost:8989
