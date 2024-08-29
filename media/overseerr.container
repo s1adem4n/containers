@@ -8,6 +8,7 @@ Environment=PUID=0 PGID=0 TZ=Europe/Berlin
 Label=proxy-manager.enable=true
 Label=proxy-manager.port=5055
 
+HealthStartPeriod=40s
 HealthCmd=curl http://localhost:5055
 HealthOnFailure=kill
 

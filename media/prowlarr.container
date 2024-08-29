@@ -5,6 +5,7 @@ Image=ghcr.io/hotio/prowlarr:latest
 AutoUpdate=registry
 Environment=PUID=0 PGID=0 TZ=Europe/Berlin
 
+HealthStartPeriod=40s
 HealthCmd=curl http://localhost:9696
 HealthOnFailure=kill
 

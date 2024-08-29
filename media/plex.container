@@ -5,6 +5,7 @@ Image=ghcr.io/hotio/plex:latest
 AutoUpdate=registry
 Environment=PUID=0 PGID=0 TZ=Europe/Berlin
 
+HealthStartPeriod=40s
 HealthCmd=curl http://localhost:32400
 HealthOnFailure=kill
 
