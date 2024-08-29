@@ -19,8 +19,8 @@ Volume=/data/jonathan/music:/data/jonathan/music
 GroupAdd=keep-groups
 
 # Ramdisk / hardware acceleration
-#Tmpfs=/transcode
-#AddDevice=/dev/dri
+Tmpfs=/transcode
+AddDevice=/dev/dri
 
 # Setup with claim token (required for first run)
 #Environment=PLEX_CLAIM=claim-token
