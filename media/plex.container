@@ -14,6 +14,8 @@ Label=proxy-manager.port=32400
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=%h/containers/storage/plex:/config
 Volume=/data/media:/data/media
+Volume=/data/media_old:/data/media_old
+Volume=/data/jonathan/music:/data/jonathan/music
 GroupAdd=keep-groups
 
 # Ramdisk / hardware acceleration
