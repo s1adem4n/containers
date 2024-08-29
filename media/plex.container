@@ -8,6 +8,9 @@ Environment=PUID=0 PGID=0 TZ=Europe/Berlin
 HealthCmd=curl http://localhost:32400
 HealthOnFailure=kill
 
+Label=proxy-manager.enable=true
+Label=proxy-manager.port=32400
+
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=%h/containers/storage/plex:/config
 Volume=/data/media:/data/media
