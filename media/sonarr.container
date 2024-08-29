@@ -11,8 +11,7 @@ HealthOnFailure=kill
 
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=%h/containers/storage/sonarr:/config
-Volume=/data/media:/data/media
-Volume=/data/usenet:/data/usenet
+Volume=/data:/data:rw
 GroupAdd=keep-groups
 
 [Service]
