@@ -1,0 +1,18 @@
+[Container]
+ContainerName=vaultwarden
+Image=docker.io/vaultwarden/server:latest
+AutoUpdate=registry
+Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
+
+PublishPort=8086:80
+Label=proxy-manager.enable=true
+
+HealthCmd=curl http://localhost:80
+HealthOnFailure=kill
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/vaultwarden:/data
+GroupAdd=keep-groups
+
+[Service]
+Restart=always
