@@ -6,7 +6,6 @@ Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
 Environment=ADMIN_TOKEN=changemelater
 
 PublishPort=8086:80
-Label=proxy-manager.enable=true
 
 HealthCmd=curl http://localhost:80
 HealthOnFailure=kill
