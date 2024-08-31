@@ -2,12 +2,12 @@
 ContainerName=vaultwarden
 Image=docker.io/vaultwarden/server:latest
 AutoUpdate=registry
-Environment=ADMIN_TOKEN=changemelater ROCKET_PORT=8000 TZ=Europe/Berlin
+Environment=ADMIN_TOKEN=changemelater ROCKET_PORT=8086 TZ=Europe/Berlin
 
-PublishPort=8086:8000
+PublishPort=8086:8086
 
 HealthStartPeriod=40s
-HealthCmd=curl http://localhost:8000
+HealthCmd=curl http://localhost:8086
 HealthOnFailure=kill
 
 Volume=/etc/localtime:/etc/localtime:ro
