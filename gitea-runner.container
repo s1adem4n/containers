@@ -1,0 +1,20 @@
+[Container]
+ContainerName=gitea
+Image=docker.io/gitea/act_runner:latest
+AutoUpdate=registry
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
+
+Environment=CONFIG_FILE=/data/config.yaml
+Environment=RUNNER_NAME=runner GITEA_INSTANCE_URL=https://gitea.bukohome.com
+# set the token when registering the runner
+Environment=GITEA_RUNNER_REGISTRATION_TOKEN=token
+
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=%h/containers/storage/gitea-runner:/data
+GroupAdd=keep-groups
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
