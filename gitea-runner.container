@@ -1,5 +1,5 @@
 [Container]
-ContainerName=gitea
+ContainerName=gitea-runner
 Image=docker.io/gitea/act_runner:latest
 AutoUpdate=registry
 Environment=PUID=0 PGID=0 TZ=Europe/Berlin
