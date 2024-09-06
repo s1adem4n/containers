@@ -7,6 +7,7 @@ Environment=PUID=0 PGID=0 TZ=Europe/Berlin
 PublishPort=3000:3000
 PublishPort=10022:22
 
+HealthStartPeriod=40s
 HealthCmd=curl http://localhost:3000
 HealthOnFailure=kill
 
