@@ -6,10 +6,6 @@ Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
 
 PublishPort=9091:9091
 
-HealthStartPeriod=40s
-HealthCmd=curl http://localhost:9091
-HealthOnFailure=kill
-
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=%h/containers/storage/authelia:/config
 GroupAdd=keep-groups
