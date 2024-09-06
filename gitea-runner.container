@@ -5,7 +5,7 @@ AutoUpdate=registry
 Environment=PUID=0 PGID=0 TZ=Europe/Berlin
 
 Environment=CONFIG_FILE=/data/config.yaml
-Environment=RUNNER_NAME=runner GITEA_INSTANCE_URL=https://gitea.bukohome.com
+Environment=GITEA_RUNNER_NAME=runner GITEA_INSTANCE_URL=https://gitea.bukohome.com
 # set the token when registering the runner
 Environment=GITEA_RUNNER_REGISTRATION_TOKEN=token
 
