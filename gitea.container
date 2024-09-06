@@ -2,7 +2,7 @@
 ContainerName=gitea
 Image=docker.io/gitea/gitea:latest
 AutoUpdate=registry
-Environment=PUID=1000 PGID=1000 TZ=Europe/Berlin
+Environment=PUID=0 PGID=0 TZ=Europe/Berlin
 
 PublishPort=3000:3000
 PublishPort=10022:22
